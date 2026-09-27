@@ -1,0 +1,5 @@
+{
+  "name": "outboxretry",
+  "private": true,
+  "type": "module"
+}

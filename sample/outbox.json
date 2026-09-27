@@ -1,0 +1,17 @@
+{
+  "unknown_ack_error_code": "E_UNKNOWN_ACK",
+  "event_error_code": "E_BAD_EVENT",
+  "budget": 1,
+  "max_retry": 1,
+  "state": { "sent": {}, "acked": [], "dead": [], "queue": [], "applied": [] },
+  "events": [
+    { "id": 1, "kind": "send", "msg": 1 },
+    { "id": 2, "kind": "timeout", "msg": 1 },
+    { "id": 3, "kind": "send", "msg": 2 },
+    { "id": 4, "kind": "timeout", "msg": 2 },
+    { "id": 5, "kind": "timeout", "msg": 2 },
+    { "id": 6, "kind": "send", "msg": 3 },
+    { "id": 7, "kind": "ack", "msg": 3 },
+    { "id": 8, "kind": "ack", "msg": 1 }
+  ]
+}
