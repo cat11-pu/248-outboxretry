@@ -1,8 +1,10 @@
-// outbox.js：一条事件的判定（基线：一律给可发）
+// outbox.js：一条消息的判定（未确认且未死信则可发，已确认或已死信则落定）
 export function canSend(state, msg) {
-  return true;
+  const acked = (state && state.acked) || [];
+  const dead = (state && state.dead) || [];
+  return acked.indexOf(msg) === -1 && dead.indexOf(msg) === -1;
 }
 
 export function isGone(state, msg) {
-  return false;
+  return !canSend(state, msg);
 }
